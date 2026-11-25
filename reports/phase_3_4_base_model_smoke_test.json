@@ -1,0 +1,47 @@
+{
+  "phase": "3.4",
+  "model_under_test": "base_llama3_2_3b.pte",
+  "model_sha256": "2b855085703e6a1743437edb6adf467f7f95f9d23f810d8fd196175630979407",
+  "model_size_bytes": 1929907360,
+  "tokenizer_sha256": "82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55",
+  "host_smoke_test": {
+    "exit_code": 0,
+    "stdout": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWhat is a pointer in C?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n**Pointers in C**\n\nIn C, a pointer is a variable that holds the memory address of a variable. It can be used to store and manipulate the memory address of a variable. It can be used to store and manipulate the memory address of a variable. It can be used to store and manipulate the memory address of a variable. It can be used to store and manipulate the memory of a variable.<|eot_id|>\n\nPyTorchObserver {\"prompt_tokens\":32,\"generated_tokens\":82,\"model_load_start_ms\":1795605384061,\"model_load_end_ms\":1795605405264,\"inference_start_ms\":1795605405264,\"inference_end_ms\":1795605426798,\"prompt_eval_end_ms\":1795605406417,\"first_token_ms\":1795605406417,\"aggregate_sampling_time_ms\":100926988935256,\"SCALING_FACTOR_UNITS_PER_SECOND\":1000}\n",
+    "stderr": ""
+  },
+  "device_smoke_test": {
+    "device": "Xiaomi Redmi 9 Power (<DEVICE_SERIAL>)",
+    "runner": "/data/local/tmp/llama/llama_main",
+    "exit_code": 0,
+    "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWhat is a pointer in C?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+    "generated_text_raw": "**Pointers in C**\n================\n\nIn C, pointers are a fundamental concept in C programming. Here's a pointer is a variable that holds a reference to a pointer.<|eot_id|>",
+    "metadata": {
+      "use_sdpa_with_kv_cache": "0",
+      "use_kv_cache": "1",
+      "get_vocab_size": "128256",
+      "get_bos_id": "128000",
+      "get_max_seq_len": "128",
+      "enable_dynamic_shape": "1"
+    },
+    "eos_ids": [
+      128009,
+      128001
+    ],
+    "observer": {
+      "prompt_tokens": 32,
+      "generated_tokens": 35,
+      "model_load_start_ms": 1795605625913,
+      "model_load_end_ms": 1795605658402,
+      "inference_start_ms": 1795605658403,
+      "inference_end_ms": 1795605694349,
+      "prompt_eval_end_ms": 1795605665518,
+      "first_token_ms": 1795605665518,
+      "aggregate_sampling_time_ms": 18,
+      "SCALING_FACTOR_UNITS_PER_SECOND": 1000
+    },
+    "rss_after_load_mib": 1929.21875,
+    "rss_after_gen_mib": 1929.21875,
+    "stdout": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWhat is a pointer in C?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n**Pointers in C**\n================\n\nIn C, pointers are a fundamental concept in C programming. Here's a pointer is a variable that holds a reference to a pointer.<|eot_id|>\n\nPyTorchObserver {\"prompt_tokens\":32,\"generated_tokens\":35,\"model_load_start_ms\":1795605625913,\"model_load_end_ms\":1795605658402,\"inference_start_ms\":1795605658403,\"inference_end_ms\":1795605694349,\"prompt_eval_end_ms\":1795605665518,\"first_token_ms\":1795605665518,\"aggregate_sampling_time_ms\":18,\"SCALING_FACTOR_UNITS_PER_SECOND\":1000}\n",
+    "stderr": "I 00:00:00.014567 executorch:main.cpp:69] Resetting threadpool with num threads = 4\nI 00:00:00.022600 executorch:runner.cpp:59] Creating LLaMa runner: model_path=base_llama3_2_3b.pte, tokenizer_path=tokenizer.model\nI 00:00:32.498089 executorch:runner.cpp:88] Reading metadata from model\nI 00:00:32.512107 executorch:runner.cpp:113] Metadata: use_sdpa_with_kv_cache = 0\nI 00:00:32.512186 executorch:runner.cpp:113] Metadata: use_kv_cache = 1\nI 00:00:32.512199 executorch:runner.cpp:113] Metadata: get_vocab_size = 128256\nI 00:00:32.512211 executorch:runner.cpp:113] Metadata: get_bos_id = 128000\nI 00:00:32.512223 executorch:runner.cpp:113] Metadata: get_max_seq_len = 128\nI 00:00:32.512233 executorch:runner.cpp:113] Metadata: enable_dynamic_shape = 1\nI 00:00:32.512245 executorch:runner.cpp:120] eos_id = 128009\nI 00:00:32.512251 executorch:runner.cpp:120] eos_id = 128001\nI 00:00:32.512273 executorch:runner.cpp:174] RSS after loading model: 1929.218750 MiB (0 if unsupported)\nI 00:00:39.627484 executorch:text_prefiller.cpp:53] Prefill token result numel(): 128256\nI 00:00:39.628339 executorch:runner.cpp:243] RSS after prompt prefill: 1929.218750 MiB (0 if unsupported)\nI 00:01:08.455466 executorch:text_token_generator.h:118] \nReached to the end of generation\nI 00:01:08.458645 executorch:runner.cpp:257] RSS after finishing text generation: 1929.218750 MiB (0 if unsupported)\nI 00:01:08.458854 executorch:stats.h:110] \tPrompt Tokens: 32    Generated Tokens: 35\nI 00:01:08.458910 executorch:stats.h:116] \tModel Load Time:\t\t32.489000 (seconds)\nI 00:01:08.458944 executorch:stats.h:126] \tTotal inference time:\t\t35.946000 (seconds)\t\t Rate: \t0.973683 (tokens/second)\nI 00:01:08.458977 executorch:stats.h:134] \t\tPrompt evaluation:\t7.115000 (seconds)\t\t Rate: \t4.497540 (tokens/second)\nI 00:01:08.459010 executorch:stats.h:145] \t\tGenerated 35 tokens:\t28.831000 (seconds)\t\t Rate: \t1.213971 (tokens/second)\nI 00:01:08.459042 executorch:stats.h:153] \tTime to first generated token:\t7.115000 (seconds)\nI 00:01:08.459073 executorch:stats.h:160] \tSampling time over 67 tokens:\t0.018000 (seconds)\n"
+  }
+}

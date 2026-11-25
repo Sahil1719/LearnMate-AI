@@ -1,0 +1,103 @@
+run_order,diag_group,run_id,case_id,model_key,temperature,seq_len_param,expected_prompt_tokens,observed_prompt_tokens,generation_budget,observer_generated_tokens,total_tokens_observer,remaining_budget_observer,has_eot_id,reached_end_log,seq_limit_log,termination_reason,exit_code,model_load_ms,ttft_ms,generation_time_ms,tok_per_sec,rss_after_load_mib,rss_after_gen_mib,question,response_text
+1,DiagA_PromptLength,diagA_short15_greedy_A,diagA_short,A,0.0,128,15,15,113,41,56,72,True,True,False,natural_eos,0,29999,3467,28930,1.417,1990.519531,1990.519531,What is an interrupt?,"In computer science, an interrupt is a type of exception that occurs when a program is executing and it is interrupted by an event or signal that requires immediate attention from the CPU (Central Processing Unit (CPU)"
+2,DiagA_PromptLength,diagA_short15_greedy_B,diagA_short,B,0.0,128,15,15,113,41,56,72,True,True,False,natural_eos,0,30177,3449,31337,1.308,2058.839844,2058.839844,What is an interrupt?,"In computer science, an interrupt is a type of exception that occurs when a program is executing and it is interrupted by an interrupt is a signal that is sent to the CPU (Central Processing Unit (CPU)"
+3,DiagA_PromptLength,diagA_med32_greedy_A,diagA_med,A,0.0,128,32,32,96,27,59,69,True,True,False,natural_eos,0,30081,5760,17292,1.561,2023.582031,2023.582031,What is an interrupt?,"An ""interrupt"" can refer to different things depending on the context in which I'll do my best to provide accurate and respectful assistant."
+4,DiagA_PromptLength,diagA_med32_greedy_B,diagA_med,B,0.0,128,32,32,96,26,58,70,True,True,False,natural_eos,0,30140,5732,16738,1.553,1996.992188,1996.992188,What is an interrupt?,"An ""interrupt"" can refer to different things depending on the context. Here are a few examples:
+
+1.  **interrupt**"
+5,DiagA_PromptLength,diagA_long62_greedy_A,diagA_long,A,0.0,128,62,62,66,19,81,47,True,True,False,natural_eos,0,29654,10868,12888,1.474,1964.882812,1964.882812,What is an interrupt?,"**Interrupt Handling**
+
+An interrupt is a mechanism that allows the system to handle interrupts and handling."
+6,DiagA_PromptLength,diagA_long62_greedy_B,diagA_long,B,0.0,128,62,62,66,26,88,40,True,True,False,natural_eos,0,29661,10825,17339,1.5,1985.238281,1985.238281,What is an interrupt?,"**Interrupt Handling**
+
+An interrupt is a type of interrupt. An interrupt is a mechanism that allows the system to handle the system."
+7,DiagA_PromptLength,diagA_short15_samp_A,diagA_short,A,0.7,128,15,15,113,25,40,88,True,True,False,natural_eos,0,29623,3425,16208,1.542,1988.460938,1988.460938,What is an interrupt?,"In computing, an interrupt is a mechanism that allows a program to temporarily stop executing a specific portion of the program being interrupted."
+8,DiagA_PromptLength,diagA_short15_samp_B,diagA_short,B,0.7,128,15,15,113,37,52,76,True,True,False,natural_eos,0,29793,3425,25802,1.434,2020.867188,2020.867188,What is an interrupt?,"In computer science, an interrupt is a way to pause or stop the normal flow of control from the operating system is interrupted and the program is interrupted while the CPU (Central Processing Unit)"
+9,DiagA_PromptLength,diagA_med32_samp_A,diagA_med,A,0.7,128,32,32,96,29,61,67,True,True,False,natural_eos,0,29823,5760,18771,1.545,2044.898438,2044.898438,What is an interrupt?,"An interrupt is a programming concept that allows a process or thread to pause or stop from occurring. For example, consider a program or a script."
+10,DiagA_PromptLength,diagA_med32_samp_B,diagA_med,B,0.7,128,32,32,96,32,64,64,True,True,False,natural_eos,0,30266,5630,21639,1.479,2027.183594,2027.183594,What is an interrupt?,"An ""interrupt"" typically means to stop or pause a conversation or discussion in order to be more effective in our interactions with the following the rise of the act."
+11,DiagA_PromptLength,diagA_long62_samp_A,diagA_long,A,0.7,128,62,62,66,34,96,32,True,True,False,natural_eos,0,29711,10892,22345,1.522,2028.917969,2028.917969,What is an interrupt?,"**Interrupt Handling in Embedded Systems**
+
+**Interrupt Handling**
+
+An interrupt is a mechanism to handle interrupt is a mechanism that ensures that can be used to extract a interrupt handling."
+12,DiagA_PromptLength,diagA_long62_samp_B,diagA_long,B,0.7,128,62,62,66,42,104,24,True,True,False,natural_eos,0,30135,10884,29140,1.441,2036.476562,2036.476562,What is an interrupt?,"I'd like to clarify the term ""interrupt"" in software, and explain the different types of software can be designed to software, which is a system, which can be designed to support and which ""int"""
+13,DiagB_GenBudget,diagB_bud32_greedy_A,diagB_q7,A,0.0,68,36,36,32,31,67,1,False,False,False,seq_limit,0,30072,5836,20955,1.479,2027.632812,2027.632812,What is the difference between combinational and sequential logic?,"A fundamental question in digital electronics!
+
+**Combinational Logic (AND) vs. Sequential Logic**
+
+**Combinational Logic**
+
+**Sequential Logic**
+
+Sequential Logic"
+14,DiagB_GenBudget,diagB_bud32_greedy_B,diagB_q7,B,0.0,68,36,36,32,28,64,4,True,True,False,natural_eos,0,29969,5897,18101,1.547,2020.339844,2020.339844,What is the difference between combinational and sequential logic?,"A fundamental question in digital electronics!
+
+**Combinational Logic** (also known as **Sequential** logic** is a type of logic."
+15,DiagB_GenBudget,diagB_bud48_greedy_A,diagB_q7,A,0.0,84,36,36,48,47,83,1,False,False,False,seq_limit,0,29582,6865,38402,1.224,2015.644531,2015.644531,What is the difference between combinational and sequential logic?,"A fundamental question in digital electronics!
+
+**Combinational Logic (AND) vs. Sequential Logic**
+
+**Combinational Logic**
+
+**Sequential Logic**
+
+Sequential Logic**
+
+**Combinational Logic**
+
+**Sequential Logic**
+
+**Sequential Logic**
+
+**"
+16,DiagB_GenBudget,diagB_bud48_greedy_B,diagB_q7,B,0.0,84,36,36,48,28,64,20,True,True,False,natural_eos,0,30383,5908,19008,1.473,2041.902344,2041.902344,What is the difference between combinational and sequential logic?,"A fundamental question in digital electronics!
+
+**Combinational Logic** (also known as **Sequential** logic** is a type of logic."
+17,DiagB_GenBudget,diagB_bud64_greedy_A,diagB_q7,A,0.0,100,36,36,64,63,99,1,False,False,False,seq_limit,0,29764,5896,41195,1.529,2066.800781,2066.800781,What is the difference between combinational and sequential logic?,"A fundamental question in digital electronics!
+
+**Combinational Logic (AND) vs. Sequential Logic**
+
+**Combinational Logic**
+
+**Sequential Logic**
+
+Sequential Logic**
+
+**Combinational Logic**
+
+**Sequential Logic**
+
+**Sequential Logic**
+
+**Sequential Logic**
+
+**Sequential Logic**
+
+**Sequential Logic**
+
+**Sequential Logic**
+
+**"
+18,DiagB_GenBudget,diagB_bud64_greedy_B,diagB_q7,B,0.0,100,36,36,64,28,64,36,True,True,False,natural_eos,0,30006,5886,18165,1.541,2058.824219,2058.824219,What is the difference between combinational and sequential logic?,"A fundamental question in digital electronics!
+
+**Combinational Logic** (also known as **Sequential** logic** is a type of logic."
+19,DiagF_MinimalPrompt,diagF_q1_greedy_A,diagF_q1,A,0.0,128,19,19,109,17,36,92,True,True,False,natural_eos,0,29460,3959,10979,1.548,2018.0,2018.0,Define a pointer in C in one sentence.,"In C, a pointer is a variable that holds the memory address of another variable."
+20,DiagF_MinimalPrompt,diagF_q1_greedy_B,diagF_q1,B,0.0,128,19,19,109,28,47,81,True,True,False,natural_eos,0,29638,3964,18843,1.486,1969.167969,1969.167969,Define a pointer in C in one sentence.,"In C, a pointer is a variable that holds the memory address of a variable, allowing it to be manipulated and used in the program."
+21,DiagF_MinimalPrompt,diagF_q2_greedy_A,diagF_q2,A,0.0,128,24,24,104,34,58,70,True,True,False,natural_eos,0,29634,4129,23365,1.455,1926.765625,1926.765625,Is a microcontroller the same as a microprocessor? Explain briefly.,"No, a microcontroller and microprocessor are not the same.
+
+Microcontroller is a small computer on a chip that is used to control the same as a microprocessor."
+22,DiagF_MinimalPrompt,diagF_q2_greedy_B,diagF_q2,B,0.0,128,24,24,104,38,62,66,True,True,False,natural_eos,0,30132,4101,24573,1.546,2067.011719,2067.011719,Is a microcontroller the same as a microprocessor? Explain briefly.,"No, a microcontroller and microprocessor are not the same.
+
+Microcontroller is a small computer that can perform many tasks like reading sensor, microcontroller is used in robotics and automation systems."
+23,DiagF_MinimalPrompt,diagF_q4_greedy_A,diagF_q4,A,0.0,128,15,15,113,25,40,88,True,True,False,natural_eos,0,29775,3442,16330,1.531,2067.03125,2067.03125,What is an ADC?,An ADC (Analog-to-Digital Converter) is a crucial component in digital systems that convert analog signals to digital signals.
+24,DiagF_MinimalPrompt,diagF_q4_greedy_B,diagF_q4,B,0.0,128,15,15,113,37,52,76,True,True,False,natural_eos,0,29845,3424,25698,1.44,2066.914062,2066.914062,What is an ADC?,An ADC (Analog-to-Digital Converter) is a crucial component in digital systems. Here's a brief overview of what an ADC is used to convert analog signals to digital signals.
+25,DiagF_MinimalPrompt,diagF_q1_samp_A,diagF_q1,A,0.7,128,19,19,109,17,36,92,True,True,False,natural_eos,0,29738,3913,11422,1.488,2058.945312,2058.945312,Define a pointer in C in one sentence.,"In C, a pointer is a variable that holds the memory address of another variable."
+26,DiagF_MinimalPrompt,diagF_q1_samp_B,diagF_q1,B,0.7,128,19,19,109,17,36,92,True,True,False,natural_eos,0,29686,3948,11024,1.542,2043.265625,2043.265625,Define a pointer in C in one sentence.,"In C, a pointer is a variable that holds the memory address of another variable."
+27,DiagF_MinimalPrompt,diagF_q2_samp_A,diagF_q2,A,0.7,128,24,24,104,25,49,79,True,True,False,natural_eos,0,30046,4106,16831,1.485,2008.886719,2008.886719,Is a microcontroller the same as a microprocessor? Explain briefly.,"No, a microcontroller and microprocessor are not exactly the same.
+
+A microcontroller is a specific type of microprocessor."
+28,DiagF_MinimalPrompt,diagF_q2_samp_B,diagF_q2,B,0.7,128,24,24,104,13,37,91,True,True,False,natural_eos,0,30231,4132,8403,1.547,1995.625,1995.625,Is a microcontroller the same as a microprocessor? Explain briefly.,"No, a microcontroller and a microprocessor are not the same"
+29,DiagF_MinimalPrompt,diagF_q4_samp_A,diagF_q4,A,0.7,128,15,15,113,32,47,81,True,True,False,natural_eos,0,29682,3420,21495,1.489,1992.621094,1992.621094,What is an ADC?,"An ADC (Analog-to-Digital Converter) is a crucial component in digital circuits, ADCs are used to convert an analog signal into a digital signal."
+30,DiagF_MinimalPrompt,diagF_q4_samp_B,diagF_q4,B,0.7,128,15,15,113,36,51,77,True,True,False,natural_eos,0,29457,3433,25139,1.432,1973.058594,1973.058594,What is an ADC?,"ADC stands for Analog-to-Digital Converter.
+
+In electronics, an ADC is a circuit or device that converts an analog signal (usually an analog signal or voltage into a digital signal."

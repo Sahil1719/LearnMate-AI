@@ -1,0 +1,90 @@
+LearnMate AI — Phase 3.5 Integrity & Baseline Verification Log
+Generated: 2026-11-25T17:40:12+05:30
+Phase: 3.5 (Controlled Base vs Merged Model Evaluation on Redmi 9 Power)
+Mode: Evaluation-Only (zero training, export, weight merge, or Android/JNI code changes)
+
+======================================================================
+1. GIT REPOSITORY BASELINE
+======================================================================
+Repository Path : <PROJECT_ROOT>
+Active Branch   : phase-3.2-quality-eval
+HEAD Commit     : e21c34086433481aa5189fb4ab35a33cc3ab69a7
+Commit Message  : feat(inference): apply Phase 3.1 runtime corrections for threads, memory trim, and context budgeting
+Working Tree    : Contains pre-existing dirty/untracked files from Phases 3.1-3.4;
+                  zero modifications made to android-app/, model/android/, or
+                  llama_main during Phase 3.5.
+Phase 3.5 Files :
+  - scripts/generate_phase_3_5_prompts.py
+  - scripts/phase_3_5_prompts.json
+  - scripts/run_phase_3_5_device.sh
+  - scripts/run_phase_3_5_eval.py
+  - scripts/blind_dump_3_5.py
+  - scripts/blind_map_3_5.json
+  - scripts/score_and_analyze_3_5.py
+  - reports/phase_3_5_raw_outputs.json
+  - reports/phase_3_5_results.csv
+  - reports/phase_3_5_integrity.txt
+  - reports/PHASE_3_5_BASE_VS_MERGED_REPORT.md
+
+======================================================================
+2. TARGET DEVICE & RUNTIME ENVIRONMENT
+======================================================================
+ADB Serial      : <DEVICE_SERIAL>
+Device Model    : M2010J19SI (Xiaomi Redmi 9 Power)
+Android Version : 12 (API 31)
+SoC / Target    : Qualcomm Snapdragon 662, ARM64 (XNNPACK NEON)
+RAM (Baseline)  : MemTotal: 3802456 kB (~3713 MB)
+                  MemFree pre-eval: 599208 kB | MemAvailable pre-eval: 1939848 kB
+                  Post-eval `free -m`: 3713 total, 3600 used, 112 free, 2251 swap (1209 free)
+                  During-run MemAvailable range: 2057.54 - 2257.89 MB (pre), 2084.67 - 2263.27 MB (post)
+Storage (/data) : 47G total, 25G used, 22G available (55% used)
+Battery Temp    : 32.9 C (pre-Run 1) -> 36.8 C (post-Run 32)
+PMIC Temp       : 37.0 C (pmi632-tz)
+CPU Threads     : 4
+Runtime         : ExecuTorch v0.5.0 (XNNPACK NEON)
+Runner Binary   : /data/local/tmp/llama/llama_main
+Runner SHA-256  : f6b533465ac75639f115ce7fcf8b418d2ec0a4dc5c235a217d21c7c9dca91b76
+
+======================================================================
+3. SHA-256 ARTIFACT INTEGRITY (PRE- AND POST-EVALUATION MATCH)
+======================================================================
+Model A (Original Unmerged Base):
+  Local  : model/experimental/base_llama3_2_3b.pte
+  Device : /data/local/tmp/llama/base_llama3_2_3b.pte
+  SHA-256: 2b855085703e6a1743437edb6adf467f7f95f9d23f810d8fd196175630979407
+  Status : EXACT MATCH (pre-eval & post-eval)
+
+Model B (Current 2-Step Merged Model):
+  Prod Local : model/android/learnmate_llama3_2_3b.pte
+  Device     : /data/local/tmp/llama/learnmate_llama3_2_3b.pte
+  SHA-256    : 8c545bde51bd434bfb922402aaa33c8952871735c04de22a9dd84f587f936b91
+  Status     : EXACT MATCH (pre-eval & post-eval; production PTE untouched)
+
+Shared Tokenizer:
+  Prod Local : model/android/tokenizer.model
+  Device     : /data/local/tmp/llama/tokenizer.model
+  SHA-256    : 82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55
+  Status     : EXACT MATCH (pre-eval & post-eval; tokenizer untouched)
+
+======================================================================
+4. OBSERVED EXECUTORCH RUNTIME METADATA (ALL 32 RUNS)
+======================================================================
+Field                    Model A (Base)       Model B (Merged)     Match
+------------------------------------------------------------------------
+get_vocab_size           128256               128256               YES
+get_bos_id               128000               128000               YES
+eos_ids                  [128009, 128001]     [128009, 128001]     YES
+get_max_seq_len          128                  128                  YES
+use_kv_cache             1                    1                    YES
+use_sdpa_with_kv_cache   0                    0                    YES
+enable_dynamic_shape     1                    1                    YES
+
+======================================================================
+5. RESTRICTION COMPLIANCE STATEMENT
+======================================================================
+- No training or LoRA fine-tuning executed.
+- No adapter weights merged or modified.
+- No model re-exported or re-quantized.
+- Production artifacts (model/android/learnmate_llama3_2_3b.pte and tokenizer.model) unchanged.
+- Android source code, JNI native bridge, and standalone llama_main binary unchanged.
+- All 32 evaluation runs exited cleanly with exit_code=0.

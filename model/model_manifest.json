@@ -1,0 +1,240 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "manifest_version": "1.1.0",
+  "project": "LearnMate AI",
+  "generated_at": "2026-11-23T18:18:00+05:30",
+  "status_definitions": {
+    "verified": "Empirically measured and confirmed on physical target hardware.",
+    "source_verified": "Verified through direct C++/Python codebase and kernel source inspection.",
+    "estimated": "Mathematically calculated or estimated based on architectural parameters; not measured on device.",
+    "planned": "Designed and scheduled in roadmap; not yet executed.",
+    "not_tested": "No empirical execution on physical target hardware to date."
+  },
+  "runtime_environment": {
+    "framework": "ExecuTorch",
+    "version": "0.5.0",
+    "commit_hash": "484a4ab5b717ce1f364c469509214d0ed0cdaf11",
+    "backend_delegate": "XNNPACK (ARM NEON)",
+    "compiler_toolchain": "Android NDK r26c (Clang 17.0.2)",
+    "target_abi": "arm64-v8a",
+    "target_os": "Android 12 (API Level 31/32)"
+  },
+  "hardware_requirement_matrix": {
+    "tier_1_entry": {
+      "ram_tier": "4GB RAM",
+      "example_device": "Xiaomi Redmi 9 Power (Snapdragon 662 / SM6115)",
+      "recommended_model": "meta-llama/Llama-3.2-1B-Instruct",
+      "quantisation": "INT4 (8da4w)",
+      "estimated_pte_size_mb": 795,
+      "estimated_peak_rss_mb": 680,
+      "available_system_ram_mb": 1340,
+      "headroom_mb": 660,
+      "multitasking_viability": "high",
+      "status": "planned"
+    },
+    "tier_2_standard": {
+      "ram_tier": "6GB+ RAM",
+      "example_device": "Realme X7 5G / OnePlus Nord / Samsung Galaxy A54",
+      "recommended_model": "meta-llama/Llama-3.2-3B-Instruct (Fine-Tuned)",
+      "quantisation": "INT4 (8da4w)",
+      "estimated_pte_size_mb": 1936,
+      "estimated_peak_rss_mb": 1750,
+      "available_system_ram_mb": 2800,
+      "headroom_mb": 1050,
+      "multitasking_viability": "high",
+      "status": "planned"
+    },
+    "tier_3_reference": {
+      "ram_tier": "12GB+ RAM / Cloud Evaluation",
+      "example_device": "Galaxy S24 Ultra (12GB) / Cloud A100 GPU",
+      "recommended_model": "meta-llama/Meta-Llama-3-8B-Instruct",
+      "quantisation": "INT4 (8da4w)",
+      "estimated_pte_size_mb": 4372,
+      "estimated_peak_rss_mb": 4050,
+      "available_system_ram_mb": 8500,
+      "headroom_mb": 4450,
+      "multitasking_viability": "moderate",
+      "status": "planned"
+    }
+  },
+  "lineage_tracking": {
+    "primary_finetune_candidate": "meta-llama/Llama-3.2-3B-Instruct",
+    "dataset": {
+      "generator_script": "training/scripts/generate_synthetic_dataset.py",
+      "validation_script": "training/scripts/validate_dataset.py",
+      "summary_report": "training/reports/dataset_generation_summary.json",
+      "validation_report": "training/reports/dataset_validation_report.json",
+      "train_path": "training/dataset/train.jsonl",
+      "train_records": 65,
+      "train_size_kb": 115.71,
+      "val_path": "training/dataset/val.jsonl",
+      "val_records": 8,
+      "val_size_kb": 13.02,
+      "test_path": "training/dataset/test.jsonl",
+      "test_records": 9,
+      "test_size_kb": 16.77,
+      "domains_covered": [
+        "Engineering",
+        "Medicine",
+        "Commerce",
+        "Science",
+        "Arts and Humanities",
+        "Professional Skills",
+        "Custom Learning Goals",
+        "Undecided Learners"
+      ]
+    },
+    "qlora_adapter": {
+      "config_file": "training/configs/qlora_config.yaml",
+      "notebook_path": "training/notebooks/learnmate_qlora_training.ipynb",
+      "lora_r": 16,
+      "lora_alpha": 32,
+      "lora_dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "quantization_base": "NF4 (bitsandbytes)",
+      "compute_dtype": "bfloat16",
+      "training_epochs": 3,
+      "batch_size_per_device": 2,
+      "gradient_accumulation_steps": 8,
+      "effective_batch_size": 16,
+      "learning_rate": 0.0002,
+      "lr_scheduler": "cosine",
+      "warmup_ratio": 0.05,
+      "max_seq_length": 1024
+    },
+    "merging_and_export": {
+      "merge_method": "peft.PeftModel.merge_and_unload()",
+      "intermediate_format": "Hugging Face BF16 Safetensors",
+      "meta_checkpoint_format": "consolidated.00.pth + params.json",
+      "executorch_exporter": "extension.llm.export.export_llama",
+      "executorch_model_flag": "llama3_2",
+      "quantization_mode": "8da4w",
+      "lowered_kernels": "XNNPACK ARM NEON qc4w microkernels",
+      "final_pte_target": "llama3_2_3b_learnmate_8da4w.pte"
+    },
+    "evaluation_targets": {
+      "rubric_file": "training/evaluation/eval_rubric.md",
+      "eval_prompts": "training/evaluation/eval_prompts.jsonl",
+      "eval_harness": "training/evaluation/evaluate_model.py",
+      "evaluation_report": "training/reports/eval_comparison_report.json",
+      "target_cpi": 4.5,
+      "target_medical_safety": 1.0,
+      "target_json_schema_compliance": 1.0
+    }
+  },
+  "models": [
+    {
+      "model_id": "meta-llama/Llama-3.2-1B-Instruct",
+      "model_family": "Llama 3.2",
+      "model_tier": "Tier-1 (4GB RAM Baseline)",
+      "target_device_class": "4GB RAM devices (e.g., Xiaomi Redmi 9 Power, Snapdragon 662)",
+      "parameter_count": 1235814400,
+      "parameter_count_formatted": "1.24B",
+      "quantisation_format": "8da4w",
+      "weight_precision": "int4",
+      "activation_precision": "int8_dynamic",
+      "embedding_precision": "int4",
+      "embedding_group_size": 32,
+      "linear_group_size": 128,
+      "pte_artifact_filename": "llama3_2_1b_8da4w.pte",
+      "artifact_size_bytes": null,
+      "artifact_size_estimated_bytes": 833617920,
+      "artifact_size_estimated_formatted": "~795 MB (0.74 GiB)",
+      "context_limit": 128,
+      "expected_memory_budget": {
+        "xnnpack_packed_weights_heap_mb_estimated": 510,
+        "runtime_arena_kv_cache_mb_estimated": 65,
+        "base_process_jni_mb_estimated": 45,
+        "peak_rss_mb_estimated": 680,
+        "peak_rss_measured_mb": null
+      },
+      "export_date": null,
+      "checksum_md5": null,
+      "validation_status": {
+        "export": "planned",
+        "ptq_lowering": "source_verified",
+        "device_inference": "not_tested",
+        "multitasking_stability": "estimated"
+      },
+      "notes": "Primary candidate for 4GB RAM devices. Fits within ~1.34 GB available RAM on Redmi 9 Power leaving ~660 MB headroom for Android OS and background apps."
+    },
+    {
+      "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "model_family": "Llama 3.2",
+      "model_tier": "Tier-2 (6GB+ RAM Standard)",
+      "target_device_class": "6GB+ RAM devices (e.g., Realme X7 5G, OnePlus, Samsung Galaxy)",
+      "parameter_count": 3212749824,
+      "parameter_count_formatted": "3.21B",
+      "quantisation_format": "8da4w",
+      "weight_precision": "int4",
+      "activation_precision": "int8_dynamic",
+      "embedding_precision": "int4",
+      "embedding_group_size": 32,
+      "linear_group_size": 128,
+      "pte_artifact_filename": "llama3_2_3b_8da4w.pte",
+      "artifact_size_bytes": null,
+      "artifact_size_estimated_bytes": 2030043136,
+      "artifact_size_estimated_formatted": "~1.89 GB (1.76 GiB)",
+      "context_limit": 512,
+      "expected_memory_budget": {
+        "xnnpack_packed_weights_heap_mb_estimated": 1550,
+        "runtime_arena_kv_cache_mb_estimated": 105,
+        "base_process_jni_mb_estimated": 45,
+        "peak_rss_mb_estimated": 1750,
+        "peak_rss_measured_mb": null
+      },
+      "export_date": null,
+      "checksum_md5": null,
+      "validation_status": {
+        "export": "planned",
+        "ptq_lowering": "source_verified",
+        "device_inference": "not_tested",
+        "multitasking_stability": "estimated"
+      },
+      "notes": "Target for 6GB+ RAM devices. Incompatible with 4GB RAM devices due to XNNPACK heap weight repacking (~1.55 GB heap) causing OOM / lmkd SIGKILL. Requires >= 2.8 GB available RAM. Primary fine-tuning candidate for personalized pedagogical tutor adapter."
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B-Instruct",
+      "model_family": "Llama 3",
+      "model_tier": "Historical Benchmark / Competition Reference",
+      "target_device_class": "High-RAM Android devices (>= 12GB RAM) or cloud evaluation",
+      "parameter_count": 8030261248,
+      "parameter_count_formatted": "8.03B",
+      "quantisation_format": "8da4w",
+      "weight_precision": "int4",
+      "activation_precision": "int8_dynamic",
+      "embedding_precision": "int4",
+      "embedding_group_size": 32,
+      "linear_group_size": 128,
+      "pte_artifact_filename": "llama3_8b_8da4w.pte",
+      "artifact_size_bytes": null,
+      "artifact_size_estimated_bytes": 4584374272,
+      "artifact_size_estimated_formatted": "~4.27 GB (3.98 GiB)",
+      "context_limit": 128,
+      "expected_memory_budget": {
+        "xnnpack_packed_weights_heap_mb_estimated": 3800,
+        "runtime_arena_kv_cache_mb_estimated": 130,
+        "base_process_jni_mb_estimated": 50,
+        "peak_rss_mb_estimated": 4050,
+        "peak_rss_measured_mb": null
+      },
+      "export_date": null,
+      "checksum_md5": null,
+      "validation_status": {
+        "export": "planned",
+        "ptq_lowering": "source_verified",
+        "device_inference": "not_tested",
+        "multitasking_stability": "estimated"
+      },
+      "notes": "Original mentor recommendation. Exceeds total physical RAM on 4GB hardware (Redmi 9 Power) and triggers instant LMK termination. Retained as reference baseline."
+    }
+  ]
+}

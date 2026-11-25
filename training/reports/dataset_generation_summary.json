@@ -1,0 +1,40 @@
+{
+  "total_records": 82,
+  "splits": {
+    "train": 65,
+    "validation": 8,
+    "test": 9
+  },
+  "domain_distribution": {
+    "Engineering": 29,
+    "Commerce": 16,
+    "Medicine": 15,
+    "Arts & Humanities": 6,
+    "Science": 16
+  },
+  "category_distribution": {
+    "A_beginner_teaching": 19,
+    "B_intermediate_explanations": 2,
+    "C_advanced_technical": 2,
+    "D_adaptive_competency": 2,
+    "E_socratic_tutoring": 2,
+    "F_error_diagnosis": 17,
+    "G_step_by_step": 16,
+    "H_personalized_recommendations": 1,
+    "I_multi_turn_dialogue": 1,
+    "J_structured_json": 17,
+    "K_cross_domain": 1,
+    "L_uncertainty_handling": 2
+  },
+  "competency_distribution": {
+    "0": 2,
+    "1": 18,
+    "3": 35,
+    "5": 2,
+    "4": 1,
+    "2": 24
+  },
+  "train_file": ".\\training\\dataset\\train.jsonl",
+  "val_file": ".\\training\\dataset\\val.jsonl",
+  "test_file": ".\\training\\dataset\\test.jsonl"
+}

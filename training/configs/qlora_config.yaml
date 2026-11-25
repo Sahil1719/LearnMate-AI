@@ -1,0 +1,82 @@
+# LearnMate AI - QLoRA Supervised Fine-Tuning (SFT) Configuration
+# Target Model: meta-llama/Llama-3.2-3B-Instruct
+# Training Method: 4-bit NormalFloat (NF4) Quantization with LoRA Parameter-Efficient Tuning
+# Target Compute: Cloud GPU (Kaggle T4 x 2, L4, or A100 with >= 16 GB VRAM)
+
+experiment:
+  project_name: "LearnMate-AI"
+  run_name: "llama3.2-3b-learnmate-qlora-v1"
+  description: "Pedagogical SFT fine-tuning to teach adaptive tutoring, Socratic dialogue, and error diagnosis"
+  seed: 42
+
+model:
+  model_id: "meta-llama/Llama-3.2-3B-Instruct"
+  torch_dtype: "bfloat16"
+  use_fast_tokenizer: true
+  trust_remote_code: false
+  model_family: "llama"
+  chat_template: "llama3"
+
+quantization_4bit:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "bfloat16"
+
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  # Target all linear projection layers in the self-attention and MLP blocks
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  modules_to_save: []
+
+dataset:
+  train_file: "training/dataset/train.jsonl"
+  val_file: "training/dataset/val.jsonl"
+  test_file: "training/dataset/test.jsonl"
+  max_seq_length: 1024
+  dataset_text_field: "messages"
+  packing: false
+
+training:
+  output_dir: "training/adapters/learnmate-llama3.2-3b-qlora"
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 8  # Effective batch size = 2 * 8 = 16
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.03
+  num_train_epochs: 3
+  max_grad_norm: 0.3
+  optim: "paged_adamw_8bit"
+  gradient_checkpointing: true
+  bf16: true
+  fp16: false
+  logging_dir: "training/reports/logs"
+  logging_steps: 10
+  eval_strategy: "steps"
+  eval_steps: 50
+  save_strategy: "steps"
+  save_steps: 100
+  save_total_limit: 3
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  report_to: "none"  # Set to 'wandb' if logged
+
+deployment_export:
+  adapter_dir: "training/adapters/learnmate-llama3.2-3b-qlora"
+  merged_model_dir: "training/adapters/learnmate-llama3.2-3b-merged-bf16"
+  target_executorch_export_script: "model/kaggle_dual_model_export.ipynb"
+  quantization_downstream: "8da4w"

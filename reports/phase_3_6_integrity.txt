@@ -1,0 +1,81 @@
+LearnMate AI — Phase 3.6 Integrity & Diagnostic Baseline Log
+Generated: 2026-11-25T19:16:10+05:30
+Phase: 3.6 (Read-Only Context, Quantization & Runtime Diagnostic)
+Mode: Strictly Read-Only Audit + Unmodified Standalone Runner Diagnostics (30 device runs)
+
+======================================================================
+1. GIT REPOSITORY BASELINE & RESTRICTION AUDIT
+======================================================================
+Repository Path : <PROJECT_ROOT>
+Active Branch   : phase-3.2-quality-eval
+HEAD Commit     : e21c34086433481aa5189fb4ab35a33cc3ab69a7
+Commit Message  : feat(inference): apply Phase 3.1 runtime corrections for threads, memory trim, and context budgeting
+ExecuTorch Root : $HOME/executorch (WSL Ubuntu-24.04)
+ExecuTorch SHA  : 484a4ab5b717ce1f364c469509214d0ed0cdaf11 (v0.5.0)
+Compliance      :
+  - Zero training or fine-tuning executed.
+  - Zero weights merged or modified.
+  - Zero PTEs exported or quantized.
+  - Production Android/JNI source files untouched in Phase 3.6.
+  - Standalone runner /data/local/tmp/llama/llama_main untouched.
+  - Zero existing reports or Phase 3.2-3.5 scripts overwritten.
+
+Phase 3.6 Created Files (temporary diagnostic scripts & new reports):
+  - scripts/phase_3_6_prompts.json
+  - scripts/run_phase_3_6_device.sh
+  - scripts/run_phase_3_6_diagnostics.py
+  - reports/phase_3_6_raw_outputs.json
+  - reports/phase_3_6_diagnostic_results.csv
+  - reports/phase_3_6_integrity.txt
+  - reports/PHASE_3_6_CONTEXT_RUNTIME_DIAGNOSTIC.md
+
+======================================================================
+2. CRYPTOGRAPHIC SHA-256 VERIFICATION (PRE- AND POST-DIAGNOSTICS)
+======================================================================
+Base PTE (Model A):
+  Local   : model/experimental/base_llama3_2_3b.pte
+  Device  : /data/local/tmp/llama/base_llama3_2_3b.pte
+  SHA-256 : 2b855085703e6a1743437edb6adf467f7f95f9d23f810d8fd196175630979407
+  Status  : EXACT MATCH (pre-run & post-run, local & device)
+
+Merged Production PTE (Model B):
+  Local   : model/android/learnmate_llama3_2_3b.pte
+  Device  : /data/local/tmp/llama/learnmate_llama3_2_3b.pte
+  SHA-256 : 8c545bde51bd434bfb922402aaa33c8952871735c04de22a9dd84f587f936b91
+  Status  : EXACT MATCH (pre-run & post-run, local & device; UNTOUCHED)
+
+Shared Tokenizer:
+  Local   : model/android/tokenizer.model
+  Device  : /data/local/tmp/llama/tokenizer.model
+  SHA-256 : 82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55
+  Status  : EXACT MATCH (pre-run & post-run, local & device; UNTOUCHED)
+
+Standalone Runner Binary:
+  Device  : /data/local/tmp/llama/llama_main
+  SHA-256 : f6b533465ac75639f115ce7fcf8b418d2ec0a4dc5c235a217d21c7c9dca91b76
+  Status  : EXACT MATCH (pre-run & post-run; UNTOUCHED)
+
+======================================================================
+3. TARGET HARDWARE & DIAGNOSTIC RUN TELEMETRY SUMMARY (N=30 RUNS)
+======================================================================
+ADB Serial          : <DEVICE_SERIAL> (Xiaomi Redmi 9 Power / M2010J19SI, Android 12)
+ARM CPU Features    : fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid (no asimddp/i8mm)
+Exit Codes          : 0 across all 30/30 runs
+Load Time (ms)      : Min 29,457 | Max 30,383 | Avg 29,872
+Decode Rate (tok/s) : Min 1.224 | Max 1.561 | Avg 1.485
+RSS Model A (MiB)   : Min 1926.8 | Max 2067.0 | Avg 2014.9
+RSS Model B (MiB)   : Min 1969.2 | Max 2067.0 | Avg 2024.1
+MemAvailable (MB)   : Pre 1934.90 - 2227.18 | Post 2049.55 - 2229.32
+Battery Temp (C)    : 31.9 C (pre-Run 1) -> 36.2 C (post-Run 30)
+
+======================================================================
+4. FLATBUFFER OPERATOR & DELEGATE STRUCTURE (BOTH PTEs IDENTICAL)
+======================================================================
+ExecutionPlans      : 9 (forward + 8 scalar metadata methods)
+forward Instrs      : 3,152 total (197 DelegateCalls + 2,955 KernelCalls)
+Delegate Backend    : XnnpackBackend (197 calls = 196 layer linears + 1 lm_head)
+Non-Delegated Ops   : 2,955 calls across 31 ATen/quantized ops (incl.
+                      quantized_decomposed::embedding_4bit.dtype_out,
+                      aten::bmm.out x56, aten::_softmax.out x28, aten::mean.out x57,
+                      aten::rsqrt.out x57, aten::sigmoid.out x28, aten::slice_scatter.out x56)
+Non-Const Arena     : [0, 286412800] bytes (273.1 MiB)

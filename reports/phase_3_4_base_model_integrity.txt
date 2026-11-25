@@ -1,0 +1,65 @@
+# LearnMate AI Phase 3.4: Original Base Model Integrity Manifest
+Timestamp: 2026-11-25T16:52:00+05:30
+Branch: phase-3.2-quality-eval
+Base Commit: e21c34086433481aa5189fb4ab35a33cc3ab69a7
+
+================================================================================
+1. Experimental Base Model Artifact (Unmerged Meta Llama 3.2 3B Instruct)
+================================================================================
+Local Path:     model/experimental/base_llama3_2_3b.pte
+Device Path:    /data/local/tmp/llama/base_llama3_2_3b.pte
+File Size:      1,929,907,360 bytes (1,840.50 MiB)
+Format:         ExecuTorch FlatBuffer Program (ET12 header, root_offset=60)
+Target Runtime: ExecuTorch v0.5.0 (PyPI executorch==0.5.0 / v0.5.0 tag 484a4ab)
+Backend:        XNNPACK (-X)
+Quantization:   INT4 8da4w (group_size=128, embedding-quantize=4,32)
+Adapter Merged: false (0 adapters attached or merged; 3,212,749,824 base params)
+SHA-256 (Kaggle): 2b855085703e6a1743437edb6adf467f7f95f9d23f810d8fd196175630979407
+SHA-256 (Local):  2b855085703e6a1743437edb6adf467f7f95f9d23f810d8fd196175630979407
+SHA-256 (Device): 2b855085703e6a1743437edb6adf467f7f95f9d23f810d8fd196175630979407
+Verification:   MATCH (Identical across Kaggle export, local experimental dir, and Redmi tmp)
+
+Runtime PTE Metadata (Verified via Redmi 9 Power llama_main):
+  use_sdpa_with_kv_cache = 0
+  use_kv_cache           = 1
+  get_vocab_size         = 128256
+  get_bos_id             = 128000
+  get_max_seq_len        = 128
+  enable_dynamic_shape   = 1
+  eos_id                 = 128009 (<|eot_id|>)
+  eos_id                 = 128001 (<|end_of_text|>)
+
+================================================================================
+2. Source Repository & Downloaded Checkpoint SHA-256 Hashes (Kaggle Version 5)
+================================================================================
+Repository:     meta-llama/Llama-3.2-3B-Instruct
+Commit SHA:     0cb88a4f764b7a12671c53f0838cd831a0843b95
+License:        Llama 3.2 Community License Agreement (Sept 25, 2024)
+HF Account:     1sahil7 (type=user, token redacted)
+
+Downloaded Files (verified in Step 3 of model/learnmate_phase_3_4_base_export.ipynb):
+  LICENSE.txt                      |         7,712 bytes | 0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35
+  USE_POLICY.md                    |         6,021 bytes | 40e2777d7faa6beaf98400654170f414d8ab29b921b5163ad4ea0a1d39894201
+  config.json                      |           878 bytes | 39fb36dc5416f445ebc4e71cb71fbcf6727e80a35836d8ba1a1474c318467b7a
+  generation_config.json           |           189 bytes | 88effbb63300dbbc7390143fbbdd9d9fa50587b37e8bfd16c8c90d4970a74a36
+  model-00001-of-00002.safetensors | 4,965,799,096 bytes | 13cbd6d16e927a0c5bad54102514e6e18b4a47b3a6eb911e39d678d328d19f55
+  model-00002-of-00002.safetensors | 1,459,729,952 bytes | 7b770216613ac5c34d7c54bdff1fa616bc4e338a9d0b20af6303e48c295ee23c
+  model.safetensors.index.json     |        20,919 bytes | 0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c
+  special_tokens_map.json          |           296 bytes | 6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec
+  tokenizer.json                   |     9,085,657 bytes | 79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4
+  tokenizer_config.json            |        54,528 bytes | 9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e
+  original/params.json             |           220 bytes | 0aa31c4da011c8cb7ab8d40dfe4402971426063038f622001e34008ce452e953
+  original/tokenizer.model         |     2,183,982 bytes | 82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55
+
+================================================================================
+3. Existing Production Baseline Verification (Strictly Unmodified)
+================================================================================
+Production Merged PTE (Local):     model/android/learnmate_llama3_2_3b.pte
+Production Merged PTE (Device):    /data/local/tmp/llama/learnmate_llama3_2_3b.pte
+  Size:   1,929,907,360 bytes
+  SHA-256: 8c545bde51bd434bfb922402aaa33c8952871735c04de22a9dd84f587f936b91 (MATCH / UNTOUCHED)
+
+Production Tokenizer (Local):      model/android/tokenizer.model
+Production Tokenizer (Device):     /data/local/tmp/llama/tokenizer.model
+  Size:   2,183,982 bytes
+  SHA-256: 82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55 (MATCH / UNTOUCHED)

@@ -1,0 +1,74 @@
+# LearnMate AI Phase 3.2: Model Integrity Verification
+Timestamp: 2026-11-24T22:58:00+05:30
+Branch: phase-3.2-quality-eval
+Base Commit: e21c34086433481aa5189fb4ab35a33cc3ab69a7
+
+================================================================================
+1. Production Model Artifact (Merged Model: Base + 2-step LoRA)
+================================================================================
+Local Path:     model/android/learnmate_llama3_2_3b.pte
+Canonical Device Path: /storage/emulated/0/Android/data/com.learnmate.ai/files/models/learnmate_llama3_2_3b.pte
+CLI Device Path:       /data/local/tmp/llama/learnmate_llama3_2_3b.pte
+File Size:      1,929,907,360 bytes (1,840.50 MiB)
+Format:         ExecuTorch FlatBuffer Program (ET12 header)
+Target Runtime: ExecuTorch v0.5.0 (ARM64-v8a)
+Backend:        XNNPACK (ARM NEON)
+Quantization:   INT4 8da4w (8-bit dynamic activation, 4-bit groupwise weight quantization, group size 128, 4-bit embedding table 4,32)
+SHA-256:        8c545bde51bd434bfb922402aaa33c8952871735c04de22a9dd84f587f936b91
+Verification:   MATCH (Identical across local repo, device tmp, and app-scoped storage)
+
+================================================================================
+2. Production Tokenizer Artifact
+================================================================================
+Local Path:     model/android/tokenizer.model
+Canonical Device Path: /storage/emulated/0/Android/data/com.learnmate.ai/files/models/tokenizer.model
+CLI Device Path:       /data/local/tmp/llama/tokenizer.model
+File Size:      2,183,982 bytes
+Type:           Llama 3 / 3.2 TikToken BPE Model
+Base Vocab:     128,000 tokens
+Special Vocab:  256 tokens (128,000 to 128,255)
+Total Vocab:    128,256 tokens
+SHA-256:        82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55
+Verification:   MATCH (Identical across local repo, device tmp, and app-scoped storage)
+
+================================================================================
+3. Model Architecture Parameters (params.json)
+================================================================================
+Hidden Dimension (dim):            3072
+Transformer Layers (n_layers):     28
+Attention Heads (n_heads):         24
+KV Heads (n_kv_heads):             8 (Grouped Query Attention GQA 3:1)
+Vocabulary Size (vocab_size):      128,256
+FFN Dimension Multiplier:          1.0 (multiple of 256)
+RMSNorm Epsilon (norm_eps):        1e-05
+RoPE Theta (rope_theta):           500000.0
+Scaled RoPE (use_scaled_rope):     true (scale factor 32)
+Max Sequence Length (max_seq_len): 128 tokens (hard boundary)
+KV Cache Enabled:                  true (use_kv_cache = 1, use_sdpa_with_kv_cache = 0)
+BOS Token ID:                      128000 (<|begin_of_text|>)
+EOS Token IDs:                     128009 (<|eot_id|>), 128001 (<|end_of_text|>)
+
+================================================================================
+4. LoRA Adapter Training Checkpoint
+================================================================================
+Local Path:     model/checkpoints/learnmate_smoke_test_adapter_checkpoint_2.tar.gz
+Archive Size:   76,394,625 bytes
+Adapter Weights: adapter_model.safetensors (~46.4 MB)
+Adapter Config: adapter_config.json (r=16, alpha=32, target_modules: q_proj, v_proj, k_proj, o_proj, gate_proj, up_proj, down_proj)
+Training Origin: Kaggle Notebook (Cell 8)
+Dataset:        65 synthetic dialogues
+Training Steps: Exactly 2 optimizer steps (effective batch size 16)
+Final Loss:     2.549154
+Merge Status:   Merged into FP16 base via merge_and_unload() prior to INT4 AOT export
+
+================================================================================
+5. Base Model Availability Status
+================================================================================
+Original Base Model: meta-llama/Llama-3.2-3B-Instruct (FP16 official Meta release)
+Local FP16 Checkpoint: NOT AVAILABLE (Not stored in local repository due to size)
+Local Base PTE (Unmerged): NOT AVAILABLE (Only merged model was exported in Kaggle pipeline)
+Device Base PTE:       NOT AVAILABLE (Device only stages learnmate_llama3_2_3b.pte)
+Status:                MISSING DEPENDENCY FOR DIRECT BASE EXECUTION
+Compliance:            In strict accordance with Phase 3.2 instructions, missing base
+                       artifact is recorded honestly. No multi-gigabyte downloads or
+                       unauthorized model exports were initiated.

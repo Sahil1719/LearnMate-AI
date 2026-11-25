@@ -1,0 +1,17 @@
+{
+    "learnmate_llama3_2_3b.pte": {
+        "path": "/kaggle/working/export/learnmate_llama3_2_3b.pte",
+        "size_bytes": 1929907360,
+        "sha256": "8c545bde51bd434bfb922402aaa33c8952871735c04de22a9dd84f587f936b91"
+    },
+    "tokenizer.model": {
+        "path": "/kaggle/working/export/tokenizer.model",
+        "size_bytes": 2183982,
+        "sha256": "82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55"
+    },
+    "params.json": {
+        "path": "/kaggle/working/llama3_2_3b_meta/params.json",
+        "size_bytes": 247,
+        "sha256": "8dc6f4e12b42cb7c72de95ae0721fe302694592c5fb8d3fc2e8530ff4118ffdd"
+    }
+}

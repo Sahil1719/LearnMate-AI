@@ -1,0 +1,330 @@
+[
+  {
+    "split": "train",
+    "prompt": "I have never written code before. What is a variable in programming?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you explain what inflation is in simple words without technical jargon?"
+  },
+  {
+    "split": "train",
+    "prompt": "How do vaccines train our immune system? Please explain like I'm a high school beginner."
+  },
+  {
+    "split": "train",
+    "prompt": "Explain the difference between Accrual Accounting and Cash Basis Accounting."
+  },
+  {
+    "split": "train",
+    "prompt": "Explain how FlashAttention-2 optimizes the standard self-attention algorithm at the hardware memory hierarchy level."
+  },
+  {
+    "split": "train",
+    "prompt": "Explain the biochemical mechanism of action of ACE inhibitors and why they cause dry cough via bradykinin accumulation."
+  },
+  {
+    "split": "train",
+    "prompt": "I am a Level 1 beginner in chemistry. What is pH?"
+  },
+  {
+    "split": "train",
+    "prompt": "I am a Level 5 biochemistry graduate student. Detail the thermodynamics and proton hopping kinetics underlying aqueous pH calculations."
+  },
+  {
+    "split": "train",
+    "prompt": "Just tell me the answer: is an array faster than a linked list?"
+  },
+  {
+    "split": "train",
+    "prompt": "I wrote this C code, but it crashes with a segmentation fault. Why? \n```c\nint *p;\n*p = 10;\n```"
+  },
+  {
+    "split": "train",
+    "prompt": "I am a 2nd year electronics engineering student. I have 1.5 hours per day. My goal is to become an Embedded Systems Developer. Current skills: C (level 2), Python (level 1), Digital Electronics (level 3). What should I study this week?"
+  },
+  {
+    "split": "train",
+    "prompt": "I don't understand recursion in programming. It feels like magic."
+  },
+  {
+    "split": "train",
+    "prompt": "Create a structured 3-phase study roadmap for an accounting student learning Financial Statement Analysis. Output strictly valid JSON."
+  },
+  {
+    "split": "train",
+    "prompt": "Compare Jean Piaget's cognitive stages with Lev Vygotsky's Zone of Proximal Development in educational psychology."
+  },
+  {
+    "split": "train",
+    "prompt": "My chest hurts on the left side and radiates to my left arm. What medicine should I take?"
+  },
+  {
+    "split": "train",
+    "prompt": "What is the exact unified equation connecting general relativity with quantum mechanics?"
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Deadlocks in Operating Systems using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about Deadlocks in Operating Systems: I answered that Mutual exclusion and Hold and wait are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Deadlocks in Operating Systems works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Deadlocks in Operating Systems for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Cache Coherence in Multi-core CPUs using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Relational Indexing (B-Trees vs Hash) using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Relational Indexing (B-Trees vs Hash) works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Relational Indexing (B-Trees vs Hash) for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Git Internal Object Model using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Git Internal Object Model works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Git Internal Object Model for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Asynchronous Event Loops in JavaScript using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about Asynchronous Event Loops in JavaScript: I answered that Call stack and Web APIs are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Asynchronous Event Loops in JavaScript works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Asynchronous Event Loops in JavaScript for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Pathophysiology of Type 2 Diabetes using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about Pathophysiology of Type 2 Diabetes: I answered that Insulin resistance and Beta-cell compensation are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Pathophysiology of Type 2 Diabetes works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Pathophysiology of Type 2 Diabetes for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Neuromuscular Junction Transmission using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about Neuromuscular Junction Transmission: I answered that Acetylcholine release and Nicotinic receptors are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Neuromuscular Junction Transmission works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Neuromuscular Junction Transmission for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain The Frank-Starling Mechanism in Cardiology using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about The Frank-Starling Mechanism in Cardiology: I answered that End-diastolic volume and Ventricular preload are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how The Frank-Starling Mechanism in Cardiology works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on The Frank-Starling Mechanism in Cardiology for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about Monetary Policy Transmission: I answered that Repo rate and Cash reserve ratio are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Monetary Policy Transmission works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Monetary Policy Transmission for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Cost of Capital & WACC Calculation using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about Cost of Capital & WACC Calculation: I answered that Cost of Equity (CAPM) and Cost of Debt are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Cost of Capital & WACC Calculation works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Cost of Capital & WACC Calculation for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Double-Entry Bookkeeping Principles using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about Double-Entry Bookkeeping Principles: I answered that Debit vs Credit and Asset increases vs Liability increases are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Double-Entry Bookkeeping Principles for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Eigenvalues and Eigenvectors in Linear Algebra using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about Eigenvalues and Eigenvectors in Linear Algebra: I answered that Characteristic polynomial and Invariant directions are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Eigenvalues and Eigenvectors in Linear Algebra works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain CRISPR-Cas9 Bacterial Adaptive Immunity using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about CRISPR-Cas9 Bacterial Adaptive Immunity: I answered that Guide RNA (gRNA) and Protospacer Adjacent Motif (PAM) are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on CRISPR-Cas9 Bacterial Adaptive Immunity for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain Special Relativity & Time Dilation using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "I had a question on an exam about Special Relativity & Time Dilation: I answered that Invariance of c and Lorentz factor gamma are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how Special Relativity & Time Dilation works step-by-step from start to finish?"
+  },
+  {
+    "split": "train",
+    "prompt": "Generate a diagnostic assessment quiz on Special Relativity & Time Dilation for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "train",
+    "prompt": "I'm a complete beginner. Can you explain The Socratic Method of Inquiry using a simple real-world analogy?"
+  },
+  {
+    "split": "train",
+    "prompt": "Can you break down how The Socratic Method of Inquiry works step-by-step from start to finish?"
+  },
+  {
+    "split": "val",
+    "prompt": "What are the engineering trade-offs between TCP and UDP in network programming?"
+  },
+  {
+    "split": "val",
+    "prompt": "It takes no time to find locker #42 because I can just multiply the locker width by 42 and walk straight there."
+  },
+  {
+    "split": "val",
+    "prompt": "I had a question on an exam about Cache Coherence in Multi-core CPUs: I answered that MESI protocol and Bus snooping are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "val",
+    "prompt": "Generate a diagnostic assessment quiz on Cache Coherence in Multi-core CPUs for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "val",
+    "prompt": "I'm a complete beginner. Can you explain Monetary Policy Transmission using a simple real-world analogy?"
+  },
+  {
+    "split": "val",
+    "prompt": "Can you break down how Double-Entry Bookkeeping Principles works step-by-step from start to finish?"
+  },
+  {
+    "split": "val",
+    "prompt": "Can you break down how CRISPR-Cas9 Bacterial Adaptive Immunity works step-by-step from start to finish?"
+  },
+  {
+    "split": "val",
+    "prompt": "I had a question on an exam about The Socratic Method of Inquiry: I answered that Elenchus (cross-examination) and Aporia (puzzlement) are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "test",
+    "prompt": "What is the difference between primary and secondary sources in history?"
+  },
+  {
+    "split": "test",
+    "prompt": "If a business has a net profit of \\$50,000 this year, that means they have at least \\$50,000 cash in their bank account, right?"
+  },
+  {
+    "split": "test",
+    "prompt": "Solve the quadratic equation 2x^2 + 5x - 3 = 0 step by step using the quadratic formula. Show all arithmetic."
+  },
+  {
+    "split": "test",
+    "prompt": "Generate a 2-question assessment quiz on Python dictionary operations. Return strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "test",
+    "prompt": "Can you break down how Cache Coherence in Multi-core CPUs works step-by-step from start to finish?"
+  },
+  {
+    "split": "test",
+    "prompt": "I had a question on an exam about Relational Indexing (B-Trees vs Hash): I answered that B+ Tree depth and Logarithmic search are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "test",
+    "prompt": "I had a question on an exam about Git Internal Object Model: I answered that Blobs and Trees are the same thing. Why did my professor mark it wrong?"
+  },
+  {
+    "split": "test",
+    "prompt": "Generate a diagnostic assessment quiz on Eigenvalues and Eigenvectors in Linear Algebra for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  },
+  {
+    "split": "test",
+    "prompt": "Generate a diagnostic assessment quiz on The Socratic Method of Inquiry for level 3 competency. Output strictly valid JSON matching the LearnMate Assessment schema."
+  }
+]

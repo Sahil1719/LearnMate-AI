@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "file_statistics": {
+    "train": {
+      "record_count": 65,
+      "file_size_bytes": 118485
+    },
+    "val": {
+      "record_count": 8,
+      "file_size_bytes": 13334
+    },
+    "test": {
+      "record_count": 9,
+      "file_size_bytes": 17169
+    }
+  },
+  "leakage_checks": {
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0
+  },
+  "distribution": {
+    "domains": {
+      "Engineering": 29,
+      "Commerce": 16,
+      "Medicine": 15,
+      "Science": 16,
+      "Arts & Humanities": 6
+    },
+    "categories": {
+      "A_beginner_teaching": 19,
+      "B_intermediate_explanations": 2,
+      "C_advanced_technical": 2,
+      "D_adaptive_competency": 2,
+      "E_socratic_tutoring": 2,
+      "F_error_diagnosis": 17,
+      "H_personalized_recommendations": 1,
+      "I_multi_turn_dialogue": 1,
+      "J_structured_json": 17,
+      "K_cross_domain": 1,
+      "L_uncertainty_handling": 2,
+      "G_step_by_step": 16
+    },
+    "competencies": {
+      "0": 2,
+      "1": 18,
+      "3": 35,
+      "5": 2,
+      "4": 1,
+      "2": 24
+    }
+  },
+  "quality_metrics": {
+    "exact_duplicates": 0,
+    "near_duplicates": 0,
+    "json_schema_valid_count": 17,
+    "medical_safety_verified_count": 15
+  }
+}

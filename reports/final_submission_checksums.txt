@@ -1,0 +1,22 @@
+LearnMate AI - Final Submission Checksums (2026-11-25 IST)
+=============================================================
+
+1. Distributable Signed Release APK
+Path: android-app/app/build/outputs/apk/release/app-release.apk
+Size (bytes): 1956712238
+SHA-256: 664409BA8E2F7B2EC4EBC0EA165691C493FD7D95EB439558E8B1DFF8C6AC2828
+Signing: Release keystore (apksigner v2 verified), package com.learnmate.ai, versionCode=1, versionName=1.0.0
+
+2. Packaged Native ExecuTorch LLM Model (Meta Llama 3.2 3B Instruct INT4 8da4w)
+Path: model/android/learnmate_llama3_2_3b.pte
+Size (bytes): 1929907360
+SHA-256: 8C545BDE51BD434BFB922402AAA33C8952871735C04DE22A9DD84F587F936B91
+
+3. Packaged Shared TikToken Tokenizer
+Path: model/android/tokenizer.model
+Size (bytes): 2183982
+SHA-256: 82E9D31979E92AB929CD544440F129D9ECD797B69E327F80F17E1C50D5551B55
+
+4. Model Export Parameter Metadata
+Path: model/android/learnmate_model_manifest.json
+Includes verified params.json SHA-256: 8DC6F4E12B42CB7C72DE95AE0721FE302694592C5FB8D3FC2E8530FF4118FFDD

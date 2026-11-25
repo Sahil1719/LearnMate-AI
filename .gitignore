@@ -1,0 +1,68 @@
+# Model weights and artifacts
+model/checkpoints/
+model/export/*.pte
+model/export/*.bin
+*.safetensors
+*.pth
+*.pt
+*.pte
+*.bin
+*.onnx
+!model/synthetic/**
+
+# Python Virtual Environments & Cache
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# ExecuTorch and C++ build artifacts
+build/
+cmake-build-*/
+.ninja*
+*.o
+*.a
+*.so
+!android-app/app/src/main/jniLibs/**/*.so
+*.dylib
+*.dll
+*.exe
+model/native/arm64-v8a/*
+!model/native/README.md
+
+# Android Studio & Gradle
+.gradle/
+build/
+app/build/
+*.apk
+*.aab
+.idea/
+local.properties
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Secrets and environment configs
+.env
+*.token
+hf_token*
+.wslconfig.backup
+*.jks
+*.keystore
+keystore.properties
+android-app/app/src/main/assets/models/
+
+# Kotlin daemon cache
+.kotlin/
+
+# Packaged submission outputs, local backups, and temporary prompt scratch
+FINAL_SUBMISSION/
+backup_phase3/
+temp_eval_prompt.txt
+model/android/tokenizer.model

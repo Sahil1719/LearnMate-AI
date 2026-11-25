@@ -1,0 +1,377 @@
+{
+  "status": "PASS",
+  "eval_cases_total": 22,
+  "existing_dataset_records": 82,
+  "splits_audited": {
+    "train": 65,
+    "val": 8,
+    "test": 9
+  },
+  "exact_matches_count": 0,
+  "exact_matches": [],
+  "high_similarity_flags_count": 0,
+  "high_similarity_flags": [],
+  "methodological_clarification": "This similarity audit computes surface lexical overlap using normalized SequenceMatcher ratio and word-level Jaccard similarity. It establishes absence of lexical and n-gram overlap, but does not guarantee semantic orthogonality, which requires dense neural bi-encoder embeddings.",
+  "domain_mismatch_investigation": "Observed domain mismatches in nearest-neighbor reporting (e.g. EVAL_004 Commerce NPV matching EXP_0052 Cardiology) occur because composite similarity is extremely low (0.15 - 0.25). At this similarity floor, there is zero domain overlap; the mathematical maximum is driven entirely by incidental syntactic boilerplate in synthetic exam-question templates ('I had a question on an exam about...', 'I answered that...', 'Why did my professor mark it wrong?').",
+  "category_coverage": {
+    "1. Beginner-level teaching": {
+      "covered": true,
+      "case_count": 2,
+      "case_ids": [
+        "EVAL_001",
+        "EVAL_006"
+      ]
+    },
+    "2. Intermediate-level explanations": {
+      "covered": true,
+      "case_count": 3,
+      "case_ids": [
+        "EVAL_002",
+        "EVAL_011",
+        "EVAL_018"
+      ]
+    },
+    "3. Advanced technical explanations": {
+      "covered": true,
+      "case_count": 5,
+      "case_ids": [
+        "EVAL_003",
+        "EVAL_008",
+        "EVAL_014",
+        "EVAL_015",
+        "EVAL_019"
+      ]
+    },
+    "4. Numerical problem solving": {
+      "covered": true,
+      "case_count": 5,
+      "case_ids": [
+        "EVAL_004",
+        "EVAL_005",
+        "EVAL_009",
+        "EVAL_019",
+        "EVAL_022"
+      ]
+    },
+    "5. Step-by-step problem solving": {
+      "covered": true,
+      "case_count": 3,
+      "case_ids": [
+        "EVAL_004",
+        "EVAL_005",
+        "EVAL_022"
+      ]
+    },
+    "6. Adaptive tutoring": {
+      "covered": true,
+      "case_count": 1,
+      "case_ids": [
+        "EVAL_006"
+      ]
+    },
+    "7. Socratic questioning": {
+      "covered": true,
+      "case_count": 2,
+      "case_ids": [
+        "EVAL_007",
+        "EVAL_020"
+      ]
+    },
+    "8. Error diagnosis": {
+      "covered": true,
+      "case_count": 3,
+      "case_ids": [
+        "EVAL_008",
+        "EVAL_020",
+        "EVAL_021"
+      ]
+    },
+    "9. Misconception correction": {
+      "covered": true,
+      "case_count": 3,
+      "case_ids": [
+        "EVAL_007",
+        "EVAL_009",
+        "EVAL_017"
+      ]
+    },
+    "10. Personalized learning recommendations": {
+      "covered": true,
+      "case_count": 1,
+      "case_ids": [
+        "EVAL_010"
+      ]
+    },
+    "11. Multi-turn conversation": {
+      "covered": true,
+      "case_count": 2,
+      "case_ids": [
+        "EVAL_011",
+        "EVAL_017"
+      ]
+    },
+    "12. Cross-domain explanations": {
+      "covered": true,
+      "case_count": 1,
+      "case_ids": [
+        "EVAL_012"
+      ]
+    },
+    "13. Structured JSON generation": {
+      "covered": true,
+      "case_count": 1,
+      "case_ids": [
+        "EVAL_013"
+      ]
+    },
+    "14. Uncertainty handling": {
+      "covered": true,
+      "case_count": 1,
+      "case_ids": [
+        "EVAL_014"
+      ]
+    },
+    "15. Factual accuracy": {
+      "covered": true,
+      "case_count": 8,
+      "case_ids": [
+        "EVAL_004",
+        "EVAL_005",
+        "EVAL_014",
+        "EVAL_015",
+        "EVAL_016",
+        "EVAL_018",
+        "EVAL_021",
+        "EVAL_022"
+      ]
+    },
+    "16. Concise but complete answers": {
+      "covered": true,
+      "case_count": 3,
+      "case_ids": [
+        "EVAL_010",
+        "EVAL_013",
+        "EVAL_016"
+      ]
+    },
+    "17. Follow-up question handling": {
+      "covered": true,
+      "case_count": 2,
+      "case_ids": [
+        "EVAL_011",
+        "EVAL_017"
+      ]
+    },
+    "18. Conceptual comparisons": {
+      "covered": true,
+      "case_count": 8,
+      "case_ids": [
+        "EVAL_001",
+        "EVAL_002",
+        "EVAL_003",
+        "EVAL_006",
+        "EVAL_009",
+        "EVAL_012",
+        "EVAL_016",
+        "EVAL_018"
+      ]
+    },
+    "19. Practical applications": {
+      "covered": true,
+      "case_count": 3,
+      "case_ids": [
+        "EVAL_002",
+        "EVAL_008",
+        "EVAL_019"
+      ]
+    },
+    "20. Incomplete or ambiguous learner questions": {
+      "covered": true,
+      "case_count": 2,
+      "case_ids": [
+        "EVAL_020",
+        "EVAL_021"
+      ]
+    }
+  },
+  "all_20_categories_covered": true,
+  "uncovered_categories": [],
+  "max_similarity_per_eval": {
+    "EVAL_001": {
+      "composite_score": 0.271,
+      "sequence_ratio": 0.367,
+      "jaccard_similarity": 0.175,
+      "split": "train",
+      "record_id": "EXP_0067",
+      "prompt_snippet": "I'm a complete beginner. Can you explain Eigenvalues and Eigenvectors in Linear Algebra us..."
+    },
+    "EVAL_002": {
+      "composite_score": 0.315,
+      "sequence_ratio": 0.404,
+      "jaccard_similarity": 0.226,
+      "split": "val",
+      "record_id": "INT_ENG_001",
+      "prompt_snippet": "What are the engineering trade-offs between TCP and UDP in network programming?"
+    },
+    "EVAL_003": {
+      "composite_score": 0.148,
+      "sequence_ratio": 0.252,
+      "jaccard_similarity": 0.043,
+      "split": "val",
+      "record_id": "EXP_0030",
+      "prompt_snippet": "Generate a diagnostic assessment quiz on Cache Coherence in Multi-core CPUs for level 3 co..."
+    },
+    "EVAL_004": {
+      "composite_score": 0.179,
+      "sequence_ratio": 0.301,
+      "jaccard_similarity": 0.058,
+      "split": "train",
+      "record_id": "EXP_0052",
+      "prompt_snippet": "I had a question on an exam about The Frank-Starling Mechanism in Cardiology: I answered t..."
+    },
+    "EVAL_005": {
+      "composite_score": 0.194,
+      "sequence_ratio": 0.313,
+      "jaccard_similarity": 0.075,
+      "split": "train",
+      "record_id": "MLT_ENG_001",
+      "prompt_snippet": "I don't understand recursion in programming. It feels like magic. Yes, but what actually h..."
+    },
+    "EVAL_006": {
+      "composite_score": 0.243,
+      "sequence_ratio": 0.32,
+      "jaccard_similarity": 0.167,
+      "split": "train",
+      "record_id": "INT_COM_001",
+      "prompt_snippet": "Explain the difference between Accrual Accounting and Cash Basis Accounting."
+    },
+    "EVAL_007": {
+      "composite_score": 0.209,
+      "sequence_ratio": 0.372,
+      "jaccard_similarity": 0.045,
+      "split": "train",
+      "record_id": "EXP_0044",
+      "prompt_snippet": "I had a question on an exam about Pathophysiology of Type 2 Diabetes: I answered that Insu..."
+    },
+    "EVAL_008": {
+      "composite_score": 0.196,
+      "sequence_ratio": 0.241,
+      "jaccard_similarity": 0.152,
+      "split": "train",
+      "record_id": "ERR_ENG_001",
+      "prompt_snippet": "I wrote this C code, but it crashes with a segmentation fault. Why? \n```c\nint *p;\n*p = 10;..."
+    },
+    "EVAL_009": {
+      "composite_score": 0.213,
+      "sequence_ratio": 0.352,
+      "jaccard_similarity": 0.073,
+      "split": "train",
+      "record_id": "EXP_0060",
+      "prompt_snippet": "I had a question on an exam about Cost of Capital & WACC Calculation: I answered that Cost..."
+    },
+    "EVAL_010": {
+      "composite_score": 0.186,
+      "sequence_ratio": 0.313,
+      "jaccard_similarity": 0.059,
+      "split": "test",
+      "record_id": "EXP_0070",
+      "prompt_snippet": "Generate a diagnostic assessment quiz on Eigenvalues and Eigenvectors in Linear Algebra fo..."
+    },
+    "EVAL_011": {
+      "composite_score": 0.148,
+      "sequence_ratio": 0.213,
+      "jaccard_similarity": 0.082,
+      "split": "train",
+      "record_id": "MLT_ENG_001",
+      "prompt_snippet": "I don't understand recursion in programming. It feels like magic. Yes, but what actually h..."
+    },
+    "EVAL_012": {
+      "composite_score": 0.193,
+      "sequence_ratio": 0.342,
+      "jaccard_similarity": 0.043,
+      "split": "train",
+      "record_id": "EXP_0076",
+      "prompt_snippet": "I had a question on an exam about Special Relativity & Time Dilation: I answered that Inva..."
+    },
+    "EVAL_013": {
+      "composite_score": 0.333,
+      "sequence_ratio": 0.365,
+      "jaccard_similarity": 0.3,
+      "split": "train",
+      "record_id": "EXP_0038",
+      "prompt_snippet": "Generate a diagnostic assessment quiz on Git Internal Object Model for level 3 competency...."
+    },
+    "EVAL_014": {
+      "composite_score": 0.186,
+      "sequence_ratio": 0.3,
+      "jaccard_similarity": 0.071,
+      "split": "train",
+      "record_id": "ADV_ENG_001",
+      "prompt_snippet": "Explain how FlashAttention-2 optimizes the standard self-attention algorithm at the hardwa..."
+    },
+    "EVAL_015": {
+      "composite_score": 0.195,
+      "sequence_ratio": 0.367,
+      "jaccard_similarity": 0.023,
+      "split": "train",
+      "record_id": "EXP_0076",
+      "prompt_snippet": "I had a question on an exam about Special Relativity & Time Dilation: I answered that Inva..."
+    },
+    "EVAL_016": {
+      "composite_score": 0.222,
+      "sequence_ratio": 0.288,
+      "jaccard_similarity": 0.156,
+      "split": "train",
+      "record_id": "INT_COM_001",
+      "prompt_snippet": "Explain the difference between Accrual Accounting and Cash Basis Accounting."
+    },
+    "EVAL_017": {
+      "composite_score": 0.136,
+      "sequence_ratio": 0.215,
+      "jaccard_similarity": 0.057,
+      "split": "train",
+      "record_id": "EXP_0024",
+      "prompt_snippet": "I had a question on an exam about Deadlocks in Operating Systems: I answered that Mutual e..."
+    },
+    "EVAL_018": {
+      "composite_score": 0.17,
+      "sequence_ratio": 0.262,
+      "jaccard_similarity": 0.077,
+      "split": "train",
+      "record_id": "ERR_ENG_001",
+      "prompt_snippet": "I wrote this C code, but it crashes with a segmentation fault. Why? \n```c\nint *p;\n*p = 10;..."
+    },
+    "EVAL_019": {
+      "composite_score": 0.208,
+      "sequence_ratio": 0.325,
+      "jaccard_similarity": 0.091,
+      "split": "train",
+      "record_id": "MLT_ENG_001",
+      "prompt_snippet": "I don't understand recursion in programming. It feels like magic. Yes, but what actually h..."
+    },
+    "EVAL_020": {
+      "composite_score": 0.201,
+      "sequence_ratio": 0.349,
+      "jaccard_similarity": 0.053,
+      "split": "train",
+      "record_id": "UNC_MED_001",
+      "prompt_snippet": "My chest hurts on the left side and radiates to my left arm. What medicine should I take?"
+    },
+    "EVAL_021": {
+      "composite_score": 0.252,
+      "sequence_ratio": 0.396,
+      "jaccard_similarity": 0.107,
+      "split": "train",
+      "record_id": "UNC_MED_001",
+      "prompt_snippet": "My chest hurts on the left side and radiates to my left arm. What medicine should I take?"
+    },
+    "EVAL_022": {
+      "composite_score": 0.146,
+      "sequence_ratio": 0.244,
+      "jaccard_similarity": 0.049,
+      "split": "train",
+      "record_id": "EXP_0052",
+      "prompt_snippet": "I had a question on an exam about The Frank-Starling Mechanism in Cardiology: I answered t..."
+    }
+  }
+}
